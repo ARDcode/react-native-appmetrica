@@ -2,7 +2,6 @@ package com.doochik.RNAppMetrica;
 
 import android.app.Activity;
 import android.app.Application;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -69,7 +68,7 @@ public class AppMetricaModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void reportEvent(String message, @Nullable ReadableMap params) {
+    public void reportEvent(String message, ReadableMap params) {
         if (params != null) {
             YandexMetrica.reportEvent(message, convertReadableMapToJson(params));
         } else {
